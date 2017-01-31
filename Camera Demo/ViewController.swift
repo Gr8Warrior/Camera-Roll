@@ -29,6 +29,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             print("Shailu  Done")
         }
         
+        
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageVIew.image = image
+        } else {
+            print("Image was not rendered")
+        }
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
