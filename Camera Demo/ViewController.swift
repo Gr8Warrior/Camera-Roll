@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet var imageVIew: UIImageView!
     
@@ -17,6 +17,17 @@ class ViewController: UIViewController {
     
     @IBAction func importImage(_ sender: Any) {
         
+        let imagePicker = UIImagePickerController()
+        
+        imagePicker.delegate = self
+        
+        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        
+        imagePicker.allowsEditing = false
+        
+        self.present(imagePicker, animated: true) { 
+            print("Shailu  Done")
+        }
         
     }
     
